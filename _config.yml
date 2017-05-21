@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+markdown: kramdown
+url: "http://docs.lexteam-executive.com"
+description: "Site de documentation pour le projet FREYJA"
+name: "Documentation lexteam-executive"
