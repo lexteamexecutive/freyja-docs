@@ -1,5 +1,7 @@
-# Lexteam-Executive documentation
-Bienvenue sur le site de documentation lexteam-executive, dédié au projet FREYJA.
-Vous trouverez ici toutes les informations concernants les différentes technologies utilisées par FREYJA
+## Lexteam-Executive documentation
+Bienvenue sur le site de documentation lexteam-executive.
+Vous trouverez ici toutes les informations concernant les différentes technologies utilisées pour l'organisation
 
-[ansible](freyja/tech/ansible.md)
+# Projet Freyja
+[Freyja](freyja/tech/freyja.md)
+[Ansible](freyja/tech/ansible.md)
