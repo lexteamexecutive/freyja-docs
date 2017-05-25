@@ -105,7 +105,7 @@ Un **playbook** est un fichier au format [YML](http://www.yaml.org/), qui permet
 Voici un exemple d'un fichier **playbook** valide (**N.B** Attention à l'identation, le format YML y est sensible ;))
 ```
 hosts: mongroupedeclients
-remote**user: monuser-client
+remote_user: monuser-client
 roles:
   - role: MAJ
 vars:
@@ -132,7 +132,7 @@ Voici un exemple d'un fichier **rôle** valide (**N.B** Attention à l'identatio
 - name: Mise à jour des logiciels présent
   apt:
     upgrade: yes
-    update__cache: yes
+    update_cache: yes
   become: yes
 
 - name: Installation d'une liste de logiciels
