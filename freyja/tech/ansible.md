@@ -1,6 +1,4 @@
-# Ansible
-
-# Sommaire
+# Ansible - Sommaire
 -   [Sommaire](#sommaire)
 -   [Introduction](#introduction)
     -   [Prérecquis](#prérecquis)
@@ -15,7 +13,9 @@
         -   [Comment bien faire son playbook](#comment-bien-faire-son-playbook)
         -   [Execution](#execution)
 -   [Les playbooks pour FREYJA](#les-playbooks-pour-freyja)
+
 ---
+
 # Introduction
 
 [Ansible](https://www.ansible.com/) est un outil open-source développé en _Python 2.7_ permettant
@@ -147,6 +147,8 @@ Voici un exemple d'un fichier _rôle_ valide (**N.B** Attention à l'identation,
     dest: "{{ DOSSIER_PARTAGE }}"
 ```
 
+---
+
 ## La pratique
 
 ### Comment bien faire son playbook
@@ -178,6 +180,8 @@ Placez vous d'abord dans le dossier dans lequel se trouve votre fichier _playboo
 ```ansible-playbook -i production/hosts MAJ.yml ```
 
 L'option ```-i``` permet d'indiquer le _fichier d'inventaire_ que nous souhaitons utiliser.
+
+---
 
 # Les playbooks pour FREYJA
 
