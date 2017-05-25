@@ -49,11 +49,11 @@ Ansible](https://docs.ansible.com/ansible/intro**installation.html)
 
 ### Côté client
 
-Afin qu'**Ansible** puisse se connecter sur l'hôte pour effectuer les actions, il faut:
+Pour qu'**Ansible** puisse se connecter sur l'hôte et effectuer les actions, il faut au préalable:
 * Avoir [installé
 Python2.7](https://wiki.python.org/moin/BeginnersGuide/Download)
 * Avoir un serveur SSH fonctionnel.
-* Que l'utilisateur défini dans le playbook d'Ansible puisse se connecter sur le(s) client(s).
+* Que l'utilisateur défini dans le **playbook** puisse se connecter sur le(s) client(s).
 
 ---
 
@@ -61,21 +61,21 @@ Python2.7](https://wiki.python.org/moin/BeginnersGuide/Download)
 
 ## La théorie
 
-Afin de savoir quelles actions mener, et sur quels serveurs, **Ansible** nécessite plusieurs élèments:
+Afin de savoir quelles actions mener et sur quels serveurs, **Ansible** nécessite plusieurs élèments:
 * Un **fichier d'inventaire**
 * Un **playbook**
 * Des **rôles**
 
 ### Fichier inventaire
 
-Le **fichier d'inventaire** est, comme son nom l'indique, un fichier contenant le(s) client(s) sur lesquels Ansible doit déployer le playbook.
+Le **fichier d'inventaire** est, comme son nom l'indique, un fichier contenant le(s) client(s) sur le(s)quel(s) Ansible doit déployer le playbook.
 
-Il peut être défini de manière génèrale dans le dossier ```/etc/ansible/hosts```, ou alors défini séparamment pour chaques **playbooks**, ou a plusieurs endroits en même temps.
+Il peut être défini de manière génèrale dans le dossier ```/etc/ansible/hosts```, ou alors défini séparamment pour chaques **playbooks**.
 
 Le **fichier d'inventaire** peut contenir:
-* Des noms d'hôte FQDN (monserveur.mondomaine.com)
-* Des adresses IP (192.168.1.20)
-* Des groupes
+* Des noms d'hôte FQDN (_monserveur.mondomaine.com_)
+* Des adresses IP (_192.168.1.20_)
+* Des groupes (_[mongroupe]_)
 
 Voici un exemple d'un **fichier d'inventaire**  valide:
 ```
@@ -105,7 +105,7 @@ remote**user: monuser-client
 roles:
   - role: MAJ
 vars:
-  DOSSIER**PARTAGE=/Mon/Dossier
+  DOSSIER-PARTAGE=/Mon/Dossier
 ```
 
 ### Rôle
@@ -118,9 +118,9 @@ Il contiens une liste d'action à effectuer, qui sont généralement composer co
 
 Chaque modules possède des options qui lui sont propre.
 
-Il est possible de rajouter des tests aux tâches afin qu'elle ne s'éxecutent que si le système d'exploitation est d'une famille particulière par exemple.
+Il est possible de rajouter des tests aux tâches afin qu'elles ne s'éxecutent que si le système d'exploitation est d'une famille particulière par exemple.
 
-Aussi, il est possible d'utiliser des variables défini en amont.
+Aussi, il est possible d'utiliser des variables définies en amont.
 
 Voici un exemple d'un fichier **rôle** valide (**N.B** Attention à l'identation, le format YML y est sensible ;)):
 ```
@@ -128,7 +128,7 @@ Voici un exemple d'un fichier **rôle** valide (**N.B** Attention à l'identatio
 - name: Mise à jour des logiciels présent
   apt:
     upgrade: yes
-    update**cache: yes
+    update__cache: yes
   become: yes
 
 - name: Installation d'une liste de logiciels
@@ -143,7 +143,7 @@ Voici un exemple d'un fichier **rôle** valide (**N.B** Attention à l'identatio
 - name: Copie du dossier partager
   copy:
     src: ./dossier
-    dest: "{{ DOSSIER**PARTAGE }}"
+    dest: "{{ DOSSIER-PARTAGE }}"
 ```
 
 ---
@@ -154,16 +154,16 @@ Voici un exemple d'un fichier **rôle** valide (**N.B** Attention à l'identatio
 
 Pour que le **playbook** puisse s'éxecuter comme il se doit, et qu'il puisse appeller les **roles**, il faut une arborescence bien défini.
 
-Pour appeler un **role**, un **playbook** regarde toujours dans le dossiers ```roles``` puis dans le dossier avec le nom du **role**, puis dans le dossier ```tasks```,pour enfin chercher le fichier ```main.yml```.
+Pour appeller un **role**, un **playbook** regarde toujours dans le dossiers ```roles``` puis dans le dossier avec le nom du **role**, puis dans le dossier ```tasks```,pour enfin chercher le fichier ```main.yml```.
 
-Par exemle, si je souhaite que mon **playbook** execute le **role** "MAJ", voici l'arborescence attendue:
+Par exemple, si je souhaite que mon **playbook** execute le **role** "MAJ", voici l'arborescence attendue:
 
 ```
-./                                                    #Dossier de base
-./mon-playbook.yml                   #Playbook
-./roles/                                         # Dossier qui contiendra tout les roles
-./roles/MAJ                                 # Dossier possédant le même nom que le role
-./roles/MAJ/tasks                      # Dossier qui contiendra le fichier role
+./    #Dossier de base
+./mon-playbook.yml    #Playbook
+./roles/    # Dossier qui contiendra tout les roles
+./roles/MAJ    # Dossier possédant le même nom que le role
+./roles/MAJ/tasks    # Dossier qui contiendra le fichier role
 ./roles/MAJ/tasks/main.yml    # Fichier role qui contient les actions à executer
 ```
 
@@ -176,6 +176,7 @@ Une fois que vous avez fini votre playbook et que l'arborescence est bonne, vous
 Dans cette exemple, nous partons du principe que nous avons un **playbook** qui se nomme MAJ.yml, et que nous avons un **fichier d'inventaire** qui se trouve dans ```production/hosts```
 
 Placez vous d'abord dans le dossier dans lequel se trouve votre fichier **playbook** , puis exécuter la commande suivante:
+
 ```ansible-playbook -i production/hosts MAJ.yml ```
 
 L'option ```-i``` permet d'indiquer le **fichier d'inventaire** que nous souhaitons utiliser.
