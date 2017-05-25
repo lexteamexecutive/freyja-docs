@@ -186,4 +186,4 @@ L'option ```-i``` permet d'indiquer le **fichier d'inventaire** que nous souhait
 
 Nous ne traiterons pas dans cette documentation les différents playbooks utilisée par FREYJA.
 
-Pour avoir plus d'informations concernant ces playbooks, rendez vous sur la page github: https://github.com/lexteamexecutive/freyja-ansible
+Pour avoir plus d'informations concernant ces playbooks, rendez vous sur la page [github](https://github.com/lexteamexecutive/freyja-ansible)
