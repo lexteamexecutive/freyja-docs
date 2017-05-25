@@ -24,7 +24,7 @@ d'automatiser les actions.
 La force d'**Ansible** réside en plusieurs
 points:
 * Il possède un grand nombre de
-[modules]((https://docs.ansible.com/ansible/modules\**by\**category.html)
+[modules](https://docs.ansible.com/ansible/modules_by_category.html)
 permettant de faire des commandes simple.
 * Il supporte un système de
 variable utilisant la syntaxe
