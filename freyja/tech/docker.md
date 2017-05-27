@@ -4,7 +4,7 @@
 
 # Introduction
 ## Qu'est ce que Docker ?
-[Docker]{https://www.docker.com) est un service permettant de simplifier la _conteneurisation_.
+[Docker](https://www.docker.com) est un service permettant de simplifier la _conteneurisation_.
 
 Docker est un logiciel qui permet de créer des _images_ système, qui serons ensuite utiliser pour créer des _conteneurs_. Plusieurs _conteneurs_ peuvent tourner en même temps, en utilisant la même _image_.
 
@@ -73,18 +73,21 @@ C'est la manière la plus simple, mais la moins permissive.
 Cela permet de lancer un conteneur déjà présent sur le dockerhub.
 
 Exemple:
+
 ```docker run hello-world ```
+
 Cette commande vas lancer un conteneurs en ce basant sur l'image ```hello-world```
 
 Il est possible, via cette ligne de commande, de rajouter plusieurs options utile, comme de se connecter via un interpreteur de commande, de définir que le dossier ```mes-donnees``` du _conteneur_ doit être exporté dans un dossier ```donnees-docker ``` sur le serveur hôte,  ou encore de faire comprendre au serveur que le port 8090 du serveur hôte doit être redirigé vers le port 80 du _conteneur_.
 
 Exemple 2:
+
 ```docker run ubutu -p 8090:80 -v donees-docker:/home/user/mes-donnees -it bash```
 
 ### Dockerfile
 **W**ork **I**n **P*rogress
 
-###Docker-compose
+### Docker-compose
 **W**ork **I**n **P*rogress
 
 # Les dockers de FREYJA
@@ -97,7 +100,7 @@ Pour avoir plus d'informations, rendez vous sur la page [github](https://github.
 **N**.**B**: Cette section est réservée aux personnes compétentes.
 
 Pour pouvoir récuperer les dockers, il faut cloner le repo, configurer le fichier ```.env``` en vous inspirant du fichier ```env.dist``` disponnible sur le repo:
-```
+```bash
 git clone https://github.com/lexteamexecutive/freyja-docker
 cd freyja-docker
 docker-compose build
