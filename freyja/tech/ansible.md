@@ -17,6 +17,8 @@ Retour sur la [page d'acceuil](http://docs.lexteam-executive.com/)
         -   [Comment bien faire son playbook](#comment-bien-faire-son-playbook)
         -   [Execution](#execution)
 -   [Les playbooks pour FREYJA](#les-playbooks-pour-freyja)
+    -   [Informations](#informations)
+    -   [Récuperer les playbooks](#récuperer-les-playbooks)
 
 ---
 
@@ -173,8 +175,7 @@ Par exemple, si je souhaite que mon **playbook** execute le **role** "MAJ", voic
 
 De plus, il est conseillé de rajouter un dossier ```production``` qui contiendra  le **fichier d'inventaire**.
 
-### Execution
-
+### Comment utiliser un playbook
 Une fois que vous avez fini votre playbook et que l'arborescence est bonne, vous pouvez vous lancer.
 
 Dans cette exemple, nous partons du principe que nous avons un **playbook** qui se nomme MAJ.yml, et que nous avons un **fichier d'inventaire** qui se trouve dans ```production/hosts```
@@ -188,10 +189,19 @@ L'option ```-i``` permet d'indiquer le **fichier d'inventaire** que nous souhait
 ---
 
 # Les playbooks pour FREYJA
-
+## Informations
 Nous ne traiterons pas dans cette documentation les différents playbooks utilisée par FREYJA.
 
 Pour avoir plus d'informations concernant ces playbooks, rendez vous sur la page [github](https://github.com/lexteamexecutive/freyja-ansible)
 
+## Récuperer les playbooks
+**N**.**B**: Cette section est réservée aux personnes compétentes.
+
+Pour pouvoir récuperer les playbooks, il faut cloner le repo, puis éxecuter le __playbook__, in indiquant le bon __fichier d'inventaire__:
+```
+git clone https://github.com/lexteamexecutive/freyja-ansible
+cd freyja-ansible
+ansible-playbook -i production/hosts freyja.yml
+```
 ---
 Retour sur la [page d'acceuil](http://docs.lexteam-executive.com/)
