@@ -3,7 +3,7 @@ Retour sur la [page d'acceuil](http://docs.lexteam-executive.com/)
 ---
 
 # Docker - Sommaire
--   [Sommaire](#sommaire)
+-   [Sommaire](#docker---sommaire)
 -   [Introduction](#introduction)
     -   [Qu'est ce que Docker ?](#qu'est-ce-que-docker-?)
     -   [Conteneurisa... Quoi ?](#conteneurisa...-quoi-?)
@@ -107,10 +107,10 @@ Exemple 2:
 ```docker run ubutu -p 8090:80 -v donees-docker:/home/user/mes-donnees -it bash```
 
 ### Dockerfile
-**W**ork **I**n **P*rogress
+**W**ork **I**n **P**rogress
 
 ### Docker-compose
-**W**ork **I**n **P*rogress
+**W**ork **I**n **P**rogress
 
 # Les dockers de FREYJA
 ## Informations
