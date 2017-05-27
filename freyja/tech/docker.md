@@ -1,4 +1,26 @@
+Retour sur la [page d'acceuil](http://docs.lexteam-executive.com/)
+
+---
+
 # Docker - Sommaire
+-   [Sommaire](#sommaire)
+-   [Introduction](#introduction)
+    -   [Qu'est ce que Docker ?](#qu'est-ce-que-docker-?)
+    -   [Conteneurisa... Quoi ?](#conteneurisa...-quoi-?)
+    -   [Mais encore ?](#mais-encore-?)
+    -   [C'est pas de la virtualisation ?](#c'est-pas-de-la-virtualisation-?)
+    -   [C'est quoi le problème?](#C'est-quoi-le-problème?)
+-   [Comment ça marche ?](#comment-ça-marche-?)
+    -   [Installation de docker](#installation-de-docker)
+    -   [La théorie](#la-théorie)
+        -   [Et si je relance ?](#Et-si-je-relance-?)
+    -   [La pratique](#la-pratique)
+        -   [Docker run](#docker-run)
+        -   [Dockerfile](#dockerfile)
+        -   [Docker-Compose](#docker-compose)
+-   [Les dockers de FREYJA](#les-dockers-de-freyja)
+    -   [Informations](#informations)
+    -   [Récupérer les Docker](#récupérer-les-docker)
 
 ---
 
@@ -14,13 +36,13 @@ Ainsi, il est séparé du système hôte. De fait, les _images_ docker peuvent t
 
 De manière imagé, on peux dire que la _conteneurisation_ pernet de créer "une boite" contenant un serveur indépendant à l'intérieur d'un serveur.
 
-## ... Mais encore?
+## Mais encore ?
 Pouvoir _conteneuriser_ les services est une fonctionnalitée très puissante, et ce sur plusieurs aspects:
 * Puisque le système est indépendant, il peut être déployer simplement sur de nombreux hôtes.
 * Il est facile de pouvoir améliorer les performances, nottament en éxecutant plusieurs conteneurs pour le même service.
 * Avec Docker, nous ne sommes plus esclaves des dépendances
 
-## Mais ... C'est pas de la virtualisation ton truc ?
+## C'est pas de la virtualisation ?
 Dans le fond, l'idée de la _conteneurisation_ et de la _virtualisation_ se rejoignent: Offrir à l'utilisateur le moyen de démarrer un ou plusieurs système différents du système hôte.
 
 Cependant, la ou la _conteneursation_ se démarque de la _virtualisation_, c'est dans sa conception.
@@ -55,7 +77,7 @@ Voici comment docker procède lorsque vous lui demander d'éxecuter un _conteneu
 * Une fois le _conteneur_ crée, il éxecute la commande définie comme point d'entrée.
 * Une fois la commande éxecutée, Docker stop le _conteneur_.
 
-### Et si je le relance?
+### Et si je relance ?
 Peut-être vous demandez vous pourquoi nous devons sortir les données hors du _conteneur_. Effectivement, si le conteneur est stopé une fois qu'il s'est executé, si nous le relançons, nous devrions pouvoir retrouver les données dedans.
 
 Oui et non.
@@ -68,7 +90,7 @@ Repartir d'une image vierge pour refaire votre _conteneur_ permet de vous assure
 ## La pratique
 Il existe 3 moyens de lancer un docker:
 
-### docker run
+### Docker run
 C'est la manière la plus simple, mais la moins permissive.
 Cela permet de lancer un conteneur déjà présent sur le dockerhub.
 
