@@ -1,5 +1,5 @@
 
 ## Projet Freyja Docs
-All the necessary documentation pour the project Freyja.
+Toute la documentation concernant les principales technologies utilisée pour construire, héberger et déployer Freyja
 
-This repo is for a gitpages you can access here: http://docs.lexteam-executive.com
+Ce repo est lié à un site github page accessible ici: http://docs.lexteam-executive.com
